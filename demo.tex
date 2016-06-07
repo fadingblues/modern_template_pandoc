@@ -1,0 +1,258 @@
+\documentclass[italian,ignorenonframetext,]{beamer}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{DejaVu Sans}
+    \setsansfont[]{PT Sans}
+    \setmonofont[Mapping=tex-ansi]{DejaVu Sans Mono}
+\fi
+\usetheme{m}
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=italian]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{italian}
+\fi
+\newif\ifbibliography
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{42,33,28}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.26,0.66,0.93}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{\underline{{#1}}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.27,0.67,0.26}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.27,0.67,0.26}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.27,0.67,0.26}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.02,0.61,0.04}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.02,0.61,0.04}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.02,0.61,0.04}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.02,0.61,0.04}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.02,0.61,0.04}{{#1}}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.40,1.00}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.40,1.00}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.40,1.00}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{1.00,0.58,0.35}{\textbf{{#1}}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.26,0.66,0.93}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{\textbf{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.40,1.00}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{1.00,1.00,0.00}{\textbf{{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,1.00,0.00}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,1.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+%%
+\metroset{numbering=fraction,
+            progressbar=frametitle,
+            background=light,
+            titleformat=uppercase,
+            frametitleformat=uppercase,
+            sectiontitleformat=regular,
+            block=fill}
+
+\title{Lezione Demo}
+\author{Davide Parisi}
+\institute{Università di Bari - ``Aldo Moro''}
+\date{\today}
+
+\begin{document}
+\frame{\titlepage}
+
+\section{Parte prima}\label{parte-prima}
+
+\begin{frame}{Introduzione}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+\end{frame}
+
+\begin{frame}{Situazione attuale}
+
+Lorem ipsum \alert{dolor} sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+\begin{alertblock}{alert}
+  alert Block
+\end{alertblock}
+
+\metroset{block=fill}
+
+\begin{exampleblock}{Example}
+  example Block
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Concetti base}
+
+\begin{itemize}
+\tightlist
+\item
+  uno
+\item
+  due
+\item
+  tre
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Concetti base}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  uno
+\item
+  due
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    duepuntouno
+  \item
+    duepuntodue
+  \end{enumerate}
+\item
+  tre
+\end{enumerate}
+
+\end{frame}
+
+\section{Seconda Parte}\label{seconda-parte}
+
+\begin{frame}{Matematica}
+
+\[X_i + Y_i = A_i\]
+
+\end{frame}
+
+\begin{frame}{Quotes}
+
+\begin{quote}
+Lorem ipsum dolor sit amet
+
+-- someone
+\end{quote}
+
+\end{frame}
+
+\begin{frame}[fragile]{Code}
+
+\metroset{block=fill}
+
+\begin{exampleblock}{\textbf{Ruby example:}}
+Produce: "hello"
+\end{exampleblock}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def} \NormalTok{hello}
+  \NormalTok{puts }\StringTok{'hello'}
+\KeywordTok{end}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{exampleblock}{\textbf{PHP example:}}
+  Produce: "Hello World!"
+\end{exampleblock}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{<?php}
+  \FunctionTok{echo} \StringTok{"Hello World!"}\OtherTok{;}
+\KeywordTok{?>}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}[fragile]{Code}
+
+\begin{exampleblock}{Java code example}
+  Main method example
+\end{exampleblock}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(String[] argv) \{}
+    \CommentTok{//TODO: your code here}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\end{document}

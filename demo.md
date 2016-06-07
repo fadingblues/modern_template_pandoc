@@ -5,8 +5,6 @@ date: \today
 institute: Università di Bari - "Aldo Moro"
 ---
 
-\metroset{background=dark}
-
 # Parte prima
 
 ## Introduzione
@@ -51,6 +49,7 @@ $$X_i + Y_i = A_i$$
 ## Quotes
 
   > Lorem ipsum dolor sit amet
+  >   
   >   -- someone
 
 ## Code
@@ -77,6 +76,10 @@ end
 ```
 
 ## Code
+
+\begin{exampleblock}{Java code example}
+  Main method example
+\end{exampleblock}
 
 ```java
 public void main(String[] argv) {
